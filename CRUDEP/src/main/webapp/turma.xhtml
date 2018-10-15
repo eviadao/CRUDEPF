@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Gerenciador de Turmas</title>
+</h:head>
+
+
+<h:body>
+
+	<h:form>
+	
+	id: <h:inputText value="#{TurmaBean.turma.id}"></h:inputText> 
+	nome: <h:inputText value="#{TurmaBean.turma.nome}"></h:inputText>
+	 
+
+		<h:commandButton value="Cadastrar"
+			action="#{turmaBean.addturmas()}"></h:commandButton>
+		
+	</h:form>
+	<h:dataTable var="tur" value="#{turmaBean.turmas}">
+		<h:column>
+			<f:facet name="header">Id</f:facet>
+			<h:outputText value="#{tur.id}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">nome</f:facet>
+			<h:outputText value="#{tur.nome}" />
+		</h:column>
+
+			
+		<h:column>
+			<f:facet name="header">Opções</f:facet>
+			<h:commandButton  action="#{TurmaBean.remove(tur.id)}"></h:commandButton>
+		</h:column>
+			
+	</h:dataTable>
+</h:body>
+
+</html>
