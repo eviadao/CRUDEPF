@@ -3,7 +3,7 @@
 	<persistence-unit name="CRUDEP_pu" transaction-type="RESOURCE_LOCAL">
 	
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<non-jta-data-source>java:/ifotoDS</non-jta-data-source>
+		<non-jta-data-source>java:/CRUDEP</non-jta-data-source>
 	
 		<class>EC.Aluno</class>
 		<class>EC.Professor</class>

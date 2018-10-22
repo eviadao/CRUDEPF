@@ -1,46 +1,52 @@
 package EC;
 
-	import java.util.Set;
+import java.util.Set;
 
-	import javax.persistence.Entity;
-	import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-	@Entity 
-	public class Aluno implements Identificavel {
-        @Id
-        private Long id;
-        private String nome;
-        
-		public Long getId() {
-			return id;
-		}
+@Entity
+public class Aluno implements Identificavel {
+	@Id
+	private Long id;
+	private String nome;
+	@ManyToOne
+	private Turma turma;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+	public Turma getTurma() {
+		return turma;
+	}
 
-		public String getNome() {
-			return nome;
-		}
+	public void setTurma(Turma turma) {
+		this.turma = turma;
+	}
 
-		public void setNome(String nome) {
-			this.nome = nome;
-		
-		}
-		
-		public Aluno(Long id, String nome) {
-			super();
-			this.id = id;
-			this.nome = nome;
-		}
+	public Long getId() {
+		return id;
+	}
 
-		public Aluno() {
-			super();
-		}
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 
 	}
 
+	public Aluno(Long id, String nome) {
+		super();
+		this.id = id;
+		this.nome = nome;
+	}
 
+	public Aluno() {
+		super();
+	}
 
-
-
+}
